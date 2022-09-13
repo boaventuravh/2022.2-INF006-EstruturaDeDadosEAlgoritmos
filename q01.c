@@ -14,6 +14,8 @@ considera que a data foi digitada corretamente.
 11-21 Escorpião
 12-21   Sargitario*/
 
+//questão incompleta, falta encerrar o programa com a data 9999
+
 #include <stdio.h>
 #include <string.h>
 
