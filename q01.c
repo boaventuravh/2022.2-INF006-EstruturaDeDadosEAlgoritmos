@@ -14,8 +14,6 @@ considera que a data foi digitada corretamente.
 11-21 Escorpião
 12-21   Sargitario*/
 
-//questão incompleta, falta encerrar o programa com a data 9999
-
 #include <stdio.h>
 #include <string.h>
 
@@ -26,7 +24,7 @@ int main()
     do{
         do{
     fflush(stdin);
-    printf("\nInforme sua data de nascimento(formato ddmm, se desejar encerrar, digite 9999): ");
+    printf("\n\nInforme sua data de nascimento(formato ddmm, se desejar encerrar, digite 9999): ");
     fgets(dataStr, 5, stdin);
     getchar();
     dataStr[strlen(dataStr)] = '\0';
@@ -34,11 +32,13 @@ int main()
     
     for(i=0;dataStr[i]!='\0';i++)
       dataInt[i] = dataStr[i]-48;
+    if (dataInt[0]+dataInt[1]+dataInt[2]+dataInt[3] == 4*9)
+        break;
         
     }while(10*dataInt[0] + dataInt[1] <= 0 || 10*dataInt[0] + dataInt[1] > 31 || 10*dataInt[2] + dataInt[3] > 12 || 10*dataInt[2] + dataInt[3] <= 0);
     
-    
-        printf("\nSeu signo: ");
+        if (dataInt[0]+dataInt[1]+dataInt[2]+dataInt[3] != 4*9)
+            printf("\nSeu signo: ");
         
         if(dataInt[2] == 0) //dataInt[2] é o primeiro dígito do mês
         {
@@ -47,73 +47,73 @@ int main()
             case 1: //janeiro
             {
                 if(10*dataInt[0] + dataInt[1] <= 20) //verificando o dia, o primeiro dígito é a casa das dezenas, o segundo é a casa das unidades
-                    printf("\nCapricornio");
+                    printf(" Capricornio");
                 else
-                    printf("\nAquario");
-                break;
+                    printf(" Aquario");
+                break; 
             }
             case 2: //fevereiro
             {
                 if(10*dataInt[0] + dataInt[1] <= 19) 
-                    printf("\nAquario");
+                    printf(" Aquario");
                 else
-                    printf("\nPeixes");
+                    printf(" Peixes");
                 break;
             }
             case 3: // março
             {
                 if(10*dataInt[0] + dataInt[1] <= 20) 
-                    printf("\nPeixes");
+                    printf(" Peixes");
                 else
-                    printf("\nAries");
+                    printf(" Aries");
                 break;
             }
             case 4: // abril
             {
                 if(10*dataInt[0] + dataInt[1] <= 20) 
-                    printf("\nAries");
+                    printf(" Aries");
                 else
-                    printf("\nTouro");
+                    printf(" Touro");
                 break;
             }
             case 5: // maio
             {
                 if(10*dataInt[0] + dataInt[1] <= 20) 
-                    printf("\nTouro");
+                    printf(" Touro");
                 else
-                    printf("\nGemeos");
+                    printf(" Gemeos");
                 break;
             }
             case 6: // junho
             {
                 if(10*dataInt[0] + dataInt[1] <= 20) 
-                    printf("\nGemeos");
+                    printf(" Gemeos");
                 else
-                    printf("\nCancer");
+                    printf(" Cancer");
                 break;
             }
             case 7: // julho
             {
                 if(10*dataInt[0] + dataInt[1] <= 21) 
-                    printf("\nCancer");
+                    printf(" Cancer");
                 else
-                    printf("\nLeao");
+                    printf(" Leao");
                 break;
             }
             case 8: // agosto
             {
                 if(10*dataInt[0] + dataInt[1] <= 22) 
-                    printf("\nLeao");
+                    printf(" Leao");
                 else
-                    printf("\nVirgem");
+                    printf(" Virgem");
                 break;
             }
             case 9: // setembro
             {
                 if(10*dataInt[0] + dataInt[1] <= 22) 
-                    printf("\nVirgem");
+                    printf(" Virgem");
                 else
-                    printf("\nLibra");
+                    printf(" Libra");
                 break;
             }
         }
@@ -124,25 +124,25 @@ int main()
             case 0: // outubro
             {
                 if(10*dataInt[0] + dataInt[1] <= 22) 
-                    printf("\nLibra");
+                    printf(" Libra");
                 else
-                    printf("\nEscorpiao");
+                    printf(" Escorpiao");
                 break;
             }
          case 1: // novembro
             {
                 if(10*dataInt[0] + dataInt[1] <= 21) 
-                    printf("\nEscorpiao");
+                    printf(" Escorpiao");
                 else
-                    printf("\nSagitario");
+                    printf(" Sagitario");
                 break;
             }
         case 2: // dezembro
             {
                 if(10*dataInt[0] + dataInt[1] <= 21) 
-                    printf("\nSagitario");
+                    printf(" Sagitario");
                 else
-                    printf("\nCapricornio");
+                    printf(" Capricornio");
                 break;
             }
         }
@@ -150,6 +150,6 @@ int main()
     }
         
     }while(dataInt[0]+dataInt[1]+dataInt[2]+dataInt[3] != 4*9);
-    printf("\nPrograma encerrado!");
+    printf("\n\nPrograma encerrado!");
     return 0;
 }
