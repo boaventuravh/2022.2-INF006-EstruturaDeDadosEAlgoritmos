@@ -1,8 +1,7 @@
 /*4) Que armazene 10 numeros em um vetor. Na entrada de dados, o numero ja deve ser armazenado na sua posição definitiva em ordem decrescente. imprimir o vetor logo apos a entrada de dados;*/
 
 #include <stdio.h>
-#define QTDE 5 
-// !!!!!!!MUDAR QTDE PRA 10 DEPOIS!!!!!!
+#define QTDE 10
 
 int main(){
 
